@@ -13,6 +13,5 @@ def create_app() -> FastAPI:
     app_.include_router(router, prefix="/heisenbergdb")
     return app_
 
-
 app = create_app()
 
