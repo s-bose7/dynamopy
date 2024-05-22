@@ -1,12 +1,19 @@
 # heisenbergDB
-## heisenbergDB Python Package Development Checklist
 
-- [ ] **Design Data Model**
+## Development Checklist
+
 - [ ] **Design APIs**
+- [ ] **Design Data Model**
 - [ ] **Write Unit Tests**
 - [ ] **Authentication and Rate limiting**
-- [ ] **Documentation**
-- [ ] **Package Configuration**
-- [ ] **Publish Package**
+- [ ] **SDK Configuration**
+- [ ] **Publish SDK**
+- [ ] **Package and API Documentation**
+
+## Deployment and Infrastructure Checklist
+
 - [ ] **Containerization**
-- [ ] **Set up continuous integration with GithubCI**
+- [ ] **Set up continuous integration**
+- [ ] **Deployments**
+- [ ] **Better Responsiveness: Implement multithreding**
+- [ ] **High availabilty: Kubernetes**
