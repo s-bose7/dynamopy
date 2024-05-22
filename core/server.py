@@ -10,7 +10,7 @@ def create_app() -> FastAPI:
         docs_url=None if config.ENVIRONMENT == "production" else "/docs",
         version="1.0.0",
     )
-    app_.include_router(router, prefix="/heisenbergdb")
+    app_.include_router(router)
     return app_
 
 app = create_app()
