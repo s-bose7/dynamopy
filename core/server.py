@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from api import router
-from config import config
+from core.config import config
 
 def create_app() -> FastAPI:
     app_ = FastAPI(
