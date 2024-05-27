@@ -24,7 +24,7 @@ async def set(request: Request)-> StoreResponse:
     # Validate request
     kv = KeyValueValidator(**payload)
     
-    success, response = StoreController().put(key=kv.key, value=kv.value)
+    success, response = StoreController.put(key=kv.key, value=kv.value)
     return StoreResponse(
         status_code=response["status_code"],
         message=response["message"],
