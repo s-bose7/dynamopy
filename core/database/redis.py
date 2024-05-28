@@ -1,22 +1,44 @@
 from typing import Tuple, Any
 
+import os
+import sys
+from dotenv import load_dotenv
+
+import redis
+
+
 class Redis:
     
     def __init__(self) -> None:
-        self.counter = 0
+        load_dotenv()        
+
+        self.db = redis.Redis(
+            host=os.getenv("HOST"),
+            port=os.getenv("PORT"),
+            password=None,
+            # All responses are returned as bytes in Python. 
+            # To receive decoded strings, set decode_responses=True. 
+            decode_responses=True 
+        )
 
     def write(self, key, value)->Tuple[str]:
-        self.counter += 1
-        if self.counter%2 == 0:
-            return "OK", "SUCCESS" 
-        else:
-            return "FAILED", "ERROR"
+        try:
+            self.db.set(key, value)
+        except Exception as e:
+            return "NOT OK", e
         
+        return "OK", "SUCCESS"
+
 
     def read(self, key)->Any:
-        pass
+        return self.db.get(key)
+
 
     def exists(self, key)->bool:
+        return self.db.exists(key)
+    
+
+    def remove(self, key)->bool:
         pass
 
 
