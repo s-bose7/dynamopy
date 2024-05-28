@@ -1,4 +1,4 @@
-from typing import Tuple
+from typing import Tuple, Any
 
 class Redis:
     
@@ -11,6 +11,13 @@ class Redis:
             return "OK", "SUCCESS" 
         else:
             return "FAILED", "ERROR"
-    
+        
+
+    def read(self, key)->Any:
+        pass
+
+    def exists(self, key)->bool:
+        pass
+
 
 redis_db: Redis = Redis()
